@@ -1,0 +1,5 @@
+{
+  "name": "sean",
+  "type": "groovy",
+  "content": "repository.repositoryManager.browse()"
+}
