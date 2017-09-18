@@ -2,6 +2,7 @@
 import unittest
 
 from docker_resolver.DockerResolver import DockerResolver
+from local_resolver.LocalResolver import LocalResolver
 
 
 class DockerResolverTest(unittest.TestCase):
@@ -46,6 +47,17 @@ class DockerResolverTest(unittest.TestCase):
         result = resolver.get_highest_version(version1, version2)
 
         self.assertEqual(version2, result)
+
+
+    def test_local_resolve(self):
+        testData = {}
+        testData['catalogue-api'] = ["1.0.1-DEV", "1.0.2-SNAPSHOT"]
+        testData['hadoop'] = ["2.1.0-DEV", "3.0.1-DEV"]
+
+        resolver = LocalResolver()
+
+        resolver.resolve_artefacts(testData)
+
 
 if __name__ == '__main__':
     unittest.main()

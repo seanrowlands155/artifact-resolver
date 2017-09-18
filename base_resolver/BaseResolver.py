@@ -8,7 +8,7 @@ class BaseResolver(object):
         pass
 
     def resolve_artefact(self, artefact_versions, env):
-        return self.resolve_highest_version(artefact_versions, env)
+        return self.resolve_highest_version(artefact_versions, env, False)
 
     def resolve_highest_version(self, tags, env, ignore_stage):
         highest_version = None
